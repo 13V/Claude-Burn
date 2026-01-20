@@ -1,0 +1,5 @@
+{
+    "buildCommand": "cd claudeburn-web && npm install && npm run build",
+    "outputDirectory": "claudeburn-web/.next",
+    "framework": "nextjs"
+}
