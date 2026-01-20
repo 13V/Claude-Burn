@@ -1,0 +1,26 @@
+{
+  "name": "agent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.71.2",
+    "@types/node": "^25.0.9",
+    "anthropic-ai": "^0.0.10",
+    "dotenv": "^17.2.3",
+    "minecraft-data": "^3.102.3",
+    "mineflayer": "^4.33.0",
+    "mineflayer-pathfinder": "^2.4.5",
+    "mineflayer-web-inventory": "^1.8.5",
+    "prismarine-viewer": "^1.33.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

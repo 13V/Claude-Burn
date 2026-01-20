@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black text-white font-mono antialiased;
+  }
+}
+
+.brutalist-border {
+  border: 4px solid white;
+}
+
+.brutalist-shadow {
+  box-shadow: 8px 8px 0px white;
+}
+
+.brutalist-shadow-red {
+  box-shadow: 8px 8px 0px #ff0000;
+}
+
+.brutalist-card {
+  @apply bg-black brutalist-border p-6 transition-all;
+}
+
+.brutalist-card:hover {
+  @apply translate-x-[-4px] translate-y-[-4px];
+  box-shadow: 12px 12px 0px white;
+}
+
+.burn-bg {
+  background: repeating-linear-gradient(45deg,
+      #ff0000,
+      #ff0000 10px,
+      #000000 10px,
+      #000000 20px);
+}

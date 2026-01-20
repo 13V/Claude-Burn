@@ -1,0 +1,96 @@
+[11:04:50] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[11:04:54] [ServerMain/INFO]: No existing world data, creating new world
+[11:04:56] [ServerMain/INFO]: Loaded 7 recipes
+[11:04:57] [ServerMain/INFO]: Loaded 1271 advancements
+[11:04:58] [Server thread/INFO]: Starting minecraft server version 1.20.4
+[11:04:58] [Server thread/INFO]: Loading properties
+[11:04:58] [Server thread/INFO]: Default game type: SURVIVAL
+[11:04:58] [Server thread/INFO]: Generating keypair
+[11:04:58] [Server thread/INFO]: Starting Minecraft server on *:25565
+[11:04:58] [Server thread/INFO]: Using default channel type
+[11:04:58] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[11:04:58] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[11:04:58] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[11:04:58] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[11:04:58] [Server thread/INFO]: Preparing level "world"
+[11:05:09] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[11:05:10] [Worker-Main-4/INFO]: Preparing spawn area: 0%
+[11:05:10] [Worker-Main-4/INFO]: Preparing spawn area: 0%
+[11:05:10] [Worker-Main-4/INFO]: Preparing spawn area: 0%
+[11:05:11] [Worker-Main-6/INFO]: Preparing spawn area: 0%
+[11:05:11] [Worker-Main-5/INFO]: Preparing spawn area: 0%
+[11:05:12] [Worker-Main-3/INFO]: Preparing spawn area: 0%
+[11:05:12] [Worker-Main-2/INFO]: Preparing spawn area: 0%
+[11:05:14] [Worker-Main-4/INFO]: Preparing spawn area: 1%
+[11:05:14] [Worker-Main-1/INFO]: Preparing spawn area: 1%
+[11:05:14] [Worker-Main-7/INFO]: Preparing spawn area: 1%
+[11:05:14] [Worker-Main-2/INFO]: Preparing spawn area: 1%
+[11:05:15] [Worker-Main-2/INFO]: Preparing spawn area: 2%
+[11:05:15] [Worker-Main-4/INFO]: Preparing spawn area: 3%
+[11:05:18] [Worker-Main-1/INFO]: Preparing spawn area: 3%
+[11:05:18] [Worker-Main-3/INFO]: Preparing spawn area: 3%
+[11:05:18] [Worker-Main-1/INFO]: Preparing spawn area: 3%
+[11:05:18] [Worker-Main-1/INFO]: Preparing spawn area: 3%
+[11:05:18] [Worker-Main-1/INFO]: Preparing spawn area: 3%
+[11:05:18] [Worker-Main-6/INFO]: Preparing spawn area: 4%
+[11:05:19] [Worker-Main-1/INFO]: Preparing spawn area: 5%
+[11:05:19] [Worker-Main-2/INFO]: Preparing spawn area: 6%
+[11:05:20] [Worker-Main-2/INFO]: Preparing spawn area: 7%
+[11:05:20] [Worker-Main-7/INFO]: Preparing spawn area: 9%
+[11:05:21] [Worker-Main-4/INFO]: Preparing spawn area: 9%
+[11:05:21] [Worker-Main-7/INFO]: Preparing spawn area: 11%
+[11:05:22] [Worker-Main-6/INFO]: Preparing spawn area: 11%
+[11:05:22] [Worker-Main-3/INFO]: Preparing spawn area: 13%
+[11:05:23] [Worker-Main-6/INFO]: Preparing spawn area: 15%
+[11:05:23] [Worker-Main-2/INFO]: Preparing spawn area: 16%
+[11:05:24] [Worker-Main-3/INFO]: Preparing spawn area: 17%
+[11:05:24] [Worker-Main-3/INFO]: Preparing spawn area: 19%
+[11:05:25] [Worker-Main-2/INFO]: Preparing spawn area: 22%
+[11:05:25] [Worker-Main-6/INFO]: Preparing spawn area: 23%
+[11:05:26] [Worker-Main-6/INFO]: Preparing spawn area: 25%
+[11:05:26] [Worker-Main-2/INFO]: Preparing spawn area: 26%
+[11:05:27] [Worker-Main-1/INFO]: Preparing spawn area: 28%
+[11:05:27] [Worker-Main-7/INFO]: Preparing spawn area: 30%
+[11:05:28] [Worker-Main-2/INFO]: Preparing spawn area: 31%
+[11:05:28] [Worker-Main-4/INFO]: Preparing spawn area: 32%
+[11:05:29] [Worker-Main-7/INFO]: Preparing spawn area: 34%
+[11:05:29] [Worker-Main-7/INFO]: Preparing spawn area: 35%
+[11:05:30] [Worker-Main-2/INFO]: Preparing spawn area: 37%
+[11:05:30] [Worker-Main-7/INFO]: Preparing spawn area: 39%
+[11:05:31] [Worker-Main-4/INFO]: Preparing spawn area: 42%
+[11:05:31] [Worker-Main-4/INFO]: Preparing spawn area: 43%
+[11:05:32] [Worker-Main-3/INFO]: Preparing spawn area: 44%
+[11:05:32] [Worker-Main-2/INFO]: Preparing spawn area: 45%
+[11:05:33] [Worker-Main-1/INFO]: Preparing spawn area: 47%
+[11:05:33] [Worker-Main-2/INFO]: Preparing spawn area: 49%
+[11:05:34] [Worker-Main-5/INFO]: Preparing spawn area: 52%
+[11:05:34] [Worker-Main-3/INFO]: Preparing spawn area: 54%
+[11:05:35] [Worker-Main-5/INFO]: Preparing spawn area: 55%
+[11:05:35] [Worker-Main-3/INFO]: Preparing spawn area: 57%
+[11:05:36] [Worker-Main-1/INFO]: Preparing spawn area: 60%
+[11:05:36] [Worker-Main-3/INFO]: Preparing spawn area: 62%
+[11:05:37] [Worker-Main-4/INFO]: Preparing spawn area: 66%
+[11:05:37] [Worker-Main-3/INFO]: Preparing spawn area: 68%
+[11:05:38] [Worker-Main-3/INFO]: Preparing spawn area: 68%
+[11:05:38] [Worker-Main-7/INFO]: Preparing spawn area: 69%
+[11:05:39] [Worker-Main-2/INFO]: Preparing spawn area: 71%
+[11:05:39] [Worker-Main-5/INFO]: Preparing spawn area: 73%
+[11:05:40] [Worker-Main-2/INFO]: Preparing spawn area: 76%
+[11:05:40] [Worker-Main-6/INFO]: Preparing spawn area: 79%
+[11:05:41] [Worker-Main-3/INFO]: Preparing spawn area: 81%
+[11:05:41] [Worker-Main-4/INFO]: Preparing spawn area: 83%
+[11:05:42] [Worker-Main-1/INFO]: Preparing spawn area: 84%
+[11:05:42] [Worker-Main-7/INFO]: Preparing spawn area: 86%
+[11:05:43] [Worker-Main-2/INFO]: Preparing spawn area: 88%
+[11:05:43] [Worker-Main-7/INFO]: Preparing spawn area: 91%
+[11:05:44] [Worker-Main-1/INFO]: Preparing spawn area: 94%
+[11:05:44] [Worker-Main-3/INFO]: Preparing spawn area: 99%
+[11:05:45] [Server thread/INFO]: Time elapsed: 35273 ms
+[11:05:45] [Server thread/INFO]: Done (46.151s)! For help, type "help"
+[11:06:05] [Server thread/INFO]: ClaudeCraftBot[/[0:0:0:0:0:0:0:1]:52030] logged in with entity id 442 at (19.5, 66.0, -2.5)
+[11:06:05] [Server thread/INFO]: ClaudeCraftBot joined the game
+[11:06:59] [Server thread/INFO]: ClaudeCraftBot has made the advancement [Suit Up]
+[11:07:00] [Server thread/INFO]: ClaudeCraftBot has made the advancement [Isn't It Iron Pick]
+[11:07:14] [Server thread/INFO]: ClaudeCraftBot has made the advancement [Stone Age]
+[11:17:23] [Server thread/INFO]: ClaudeCraftBot has made the advancement [Acquire Hardware]
+[11:17:30] [Server thread/INFO]: ClaudeCraftBot was shot by Skeleton
