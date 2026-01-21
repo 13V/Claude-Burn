@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Burn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Pro', Georgia, serif;
+            background: #0c0e12;
+            color: #CC785C;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .header {
+            background: linear-gradient(180deg, #13151a 0%, #0f1014 100%);
+            border-bottom: 1px solid #1f2329;
+            padding: 18px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-size: 30px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #CC785C;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 48px;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: 2px solid #CC785C;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #CC785C;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(204, 120, 92, 0.1);
+        }
+
+        .btn-primary {
+            background: #CC785C;
+            color: #0c0e12;
+        }
+
+        .btn-primary:hover {
+            background: #d88a6e;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .stat-label {
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #CC785C;
+            font-weight: 500;
+        }
+
+        .stat-value {
+            font-size: 36px;
+            font-weight: 600;
+            color: #CC785C;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .main {
+            padding: 0;
+            max-width: 2000px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            background: #0a0a0a;
+            border-bottom: 1px solid #1a1a1a;
+            padding: 120px 32px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-card {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 64px 56px;
+            background: rgba(13, 14, 18, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 32px;
+            border: 1px solid rgba(204, 120, 92, 0.2);
+            box-shadow: 0 0 80px rgba(204, 120, 92, 0.15),
+                0 8px 32px rgba(0, 0, 0, 0.4);
+            display: flex;
+            gap: 48px;
+            align-items: center;
+            max-width: 1200px;
+        }
+
+        .hero-content {
+            flex: 1;
+            text-align: left;
+        }
+
+        .hero-graphic {
+            flex: 0 0 280px;
+        }
+
+        .hero-graphic img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 0 30px rgba(204, 120, 92, 0.3));
+        }
+
+        .hero-stats {
+            flex: 0 0 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .stat-card {
+            background: rgba(10, 10, 10, 0.6);
+            border: 1px solid rgba(204, 120, 92, 0.3);
+            border-radius: 16px;
+            padding: 20px 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #CC785C, transparent);
+            opacity: 0.5;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+        }
+
+        .stat-value {
+            font-size: 32px;
+            font-weight: 600;
+            color: #CC785C;
+            line-height: 1;
+        }
+
+        .hero-title {
+            font-size: 72px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 32px;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+        }
+
+        .hero-title span {
+            color: #CC785C;
+            text-shadow: 0 0 40px rgba(204, 120, 92, 0.4);
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0;
+            line-height: 1.6;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+        }
+
+        .hero-subtitle strong {
+            color: #CC785C;
+            font-weight: 600;
+        }
+
+        .terminal-section {
+            margin: 48px 32px 32px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(204, 120, 92, 0.3);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .terminal-header {
+            background: rgba(204, 120, 92, 0.1);
+            padding: 16px 24px;
+            border-bottom: 1px solid rgba(204, 120, 92, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .terminal-title {
+            font-size: 16px;
+            color: #CC785C;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .terminal-status {
+            width: 8px;
+            height: 8px;
+            background: #00ff00;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.4;
+            }
+        }
+
+        .terminal-body {
+            padding: 24px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.8;
+            color: #00ff00;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .terminal-line {
+            margin-bottom: 4px;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .terminal-line .timestamp {
+            color: rgba(0, 255, 0, 0.6);
+        }
+
+        .terminal-line .action {
+            color: #CC785C;
+            font-weight: bold;
+        }
+
+        .terminal-line .address {
+            color: #00ccff;
+        }
+
+        .terminal-body::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .terminal-body::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .terminal-body::-webkit-scrollbar-thumb {
+            background: rgba(204, 120, 92, 0.5);
+            border-radius: 4px;
+        }
+
+        .tokens-section {
+            padding: 24px 32px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .panel {
+            background: linear-gradient(180deg, #13151a 0%, #0f1014 100%);
+            border: 1px solid #1f2329;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .panel-header {
+            padding: 14px 20px;
+            border-bottom: 1px solid #1f2329;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .panel-title {
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: #CC785C;
+        }
+
+        .count-badge {
+            background: #1f2329;
+            padding: 6px 20px;
+            border-radius: 3px;
+            font-size: 22px;
+            font-weight: 600;
+            color: #CC785C;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .panel-body {
+            height: calc(100vh - 240px);
+            overflow-y: auto;
+        }
+
+        .panel-body::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .panel-body::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .panel-body::-webkit-scrollbar-thumb {
+            background: #1f2329;
+            border-radius: 3px;
+        }
+
+        .panel-body::-webkit-scrollbar-thumb:hover {
+            background: #2a2f38;
+        }
+
+        .item {
+            padding: 16px 20px;
+            border-bottom: 1px solid #181a1f;
+            border: 1px solid #CC785C;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .item:hover {
+            background: rgba(31, 35, 41, 0.4);
+            transform: translateY(-2px);
+            border-color: #d88a6e;
+            box-shadow: 0 4px 12px rgba(204, 120, 92, 0.2);
+        }
+
+        .item:last-child {
+            border-bottom: 1px solid #CC785C;
+        }
+
+        .item-header {
+            display: grid;
+            grid-template-columns: 64px 1fr;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .item-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 4px;
+            background: #1f2329;
+            border: 1px solid #2a2f38;
+            object-fit: cover;
+        }
+
+        .item-meta {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 3px;
+        }
+
+        .item-name {
+            font-size: 26px;
+            font-weight: 600;
+            color: #CC785C;
+            letter-spacing: -0.01em;
+        }
+
+        .item-addr {
+            font-size: 22px;
+            font-family: 'Courier New', monospace;
+            color: #CC785C;
+            cursor: pointer;
+            transition: all 0.2s;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .item-addr:hover {
+            background: rgba(204, 120, 92, 0.1);
+            color: #d88a6e;
+        }
+
+        .item-data {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            padding: 12px;
+            background: rgba(19, 21, 26, 0.6);
+            border: 1px solid #1f2329;
+            border-radius: 6px;
+            margin-top: 12px;
+        }
+
+        .data-field {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 12px;
+            background: rgba(31, 35, 41, 0.5);
+            border-radius: 4px;
+        }
+
+        .data-label {
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #CC785C;
+            font-weight: 500;
+        }
+
+        .data-value {
+            font-size: 26px;
+            font-weight: 600;
+            color: #CC785C;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .empty {
+            padding: 60px 20px;
+            text-align: center;
+            color: #CC785C;
+            font-size: 24px;
+        }
+
+        .loading {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .loading-spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #1f2329;
+            border-top-color: #6b7280;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+            margin: 0 auto 12px;
+        }
+
+        .loading-text {
+            font-size: 22px;
+            color: #CC785C;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media (max-width: 1400px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="brand">Claude Burn</div>
+        <div class="header-right">
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-label">Total Tokens</span>
+                    <span class="stat-value" id="totalTokens">—</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Active 24h</span>
+                    <span class="stat-value" id="activeBurns">—</span>
+                </div>
+            </div>
+            <div class="header-buttons">
+                <a href="https://x.com/claudeburn" target="_blank" class="btn btn-secondary">𝕏 Community</a>
+                <a href="https://pump.fun" target="_blank" class="btn btn-primary">Buy $CLAUDEBURN</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="hero">
+            <div class="hero-card">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Deflationary Token<br>
+                        <span>Burning with Every Trade</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Claude Burn tracks PumpFun tokens and automatically burns a percentage of every trade,<br>
+                        reducing supply and increasing value for <strong>$CLAUDEBURN</strong> holders.
+                    </p>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="stat-label">Tracked Tokens</div>
+                        <div class="stat-value" id="heroTrackedTokens">—</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Tokens Burned</div>
+                        <div class="stat-value">Coming Soon</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Volume Generated</div>
+                        <div class="stat-value">Coming Soon</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="terminal-section">
+            <div class="terminal-header">
+                <div class="terminal-status"></div>
+                <div class="terminal-title">Live Bot Activity</div>
+            </div>
+            <div class="terminal-body" id="terminalBody">
+                <div class="terminal-line"><span class="timestamp">[Loading...]</span> Initializing activity feed...
+                </div>
+            </div>
+        </div>
+
+        <div class="tokens-section">
+            <div class="grid">
+                <div class="panel">
+                    <div class="panel-header">
+                        <span class="panel-title">Low Cap</span>
+                        <span class="count-badge" id="lowCapCount">0</span>
+                    </div>
+                    <div class="panel-body" id="lowCapList">
+                        <div class="loading">
+                            <div class="loading-spinner"></div>
+                            <div class="loading-text">Loading data...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-header">
+                        <span class="panel-title">Close to Migration</span>
+                        <span class="count-badge" id="midCapCount">0</span>
+                    </div>
+                    <div class="panel-body" id="midCapList">
+                        <div class="loading">
+                            <div class="loading-spinner"></div>
+                            <div class="loading-text">Loading data...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-header">
+                        <span class="panel-title">Migrated</span>
+                        <span class="count-badge" id="highCapCount">0</span>
+                    </div>
+                    <div class="panel-body" id="highCapList">
+                        <div class="loading">
+                            <div class="loading-spinner"></div>
+                            <div class="loading-text">Loading data...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const API = '/api/tokens';
+            const PUMP = 'https://frontend-api.pump.fun/coins';
+
+            async function fetchMeta(addr) {
+                try {
+                    const r = await fetch(`${PUMP}/${addr}`);
+                    if (!r.ok) throw new Error();
+                    const d = await r.json();
+                    return {
+                        img: d.image_uri || '',
+                        name: d.name || 'Unknown',
+                        mc: d.usd_market_cap || 0
+                    };
+                } catch {
+                    return { img: '', name: 'Unknown', mc: 0 };
+                }
+            }
+
+            function categorize(mc) {
+                if (mc >= 3000 && mc <= 10000) return 'low';
+                if (mc > 10000 && mc <= 60000) return 'mid';
+                if (mc > 60000) return 'high';
+                return null;
+            }
+
+            function formatMC(mc) {
+                if (mc >= 1000000) return `$${(mc / 1000000).toFixed(2)}M`;
+                if (mc >= 1000) return `$${(mc / 1000).toFixed(1)}K`;
+                return `$${mc.toFixed(0)}`;
+            }
+
+            function createItem(token, metadata) {
+                const shortAddr = `${token.address.slice(0, 6)}...${token.address.slice(-4)}`;
+                return `
+                <div class="item" onclick="openChart('${token.address}')">
+                    <div class="item-header">
+                        <img src="${metadata.image}" class="item-icon" onerror="this.style.display='none'">
+                        <div class="item-meta">
+                            <div class="item-name">${metadata.name}</div>
+                            <div class="item-addr" onclick="event.stopPropagation(); copyAddress('${token.address}')" title="Click to copy address">
+                                ${shortAddr}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-data">
+                        <div class="data-field">
+                            <span class="data-label">Market Cap</span>
+                            <span class="data-value">${formatMC(metadata.marketCap)}</span>
+                        </div>
+                        <div class="data-field">
+                            <span class="data-label">Burn Rate</span>
+                            <span class="data-value">${token.burnPercentage}%</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+            }
+
+            function openChart(address) {
+                window.open(`https://dexscreener.com/solana/${address}`, '_blank');
+            }
+
+            function copyAddress(address) {
+                navigator.clipboard.writeText(address);
+            }
+
+            function renderPanel(id, items) {
+                const el = document.getElementById(id);
+                if (items.length === 0) {
+                    el.innerHTML = '<div class="empty">No tokens in this category</div>';
+                    return;
+                }
+                el.innerHTML = items
+                    .sort((a, b) => b.metadata.marketCap - a.metadata.marketCap)
+                    .map(item => createItem(item, item.metadata))
+                    .join('');
+            }
+
+            async function loadData() {
+                try {
+                    const res = await fetch(API);
+                    const data = await res.json();
+                    if (!data.success) throw new Error();
+
+                    document.getElementById('totalTokens').textContent = data.tokens.length;
+                    document.getElementById('activeBurns').textContent = data.tokens.filter(t =>
+                        (Date.now() - (t.lastBurn || 0)) < 86400000
+                    ).length;
+
+                    const low = [], mid = [], high = [];
+                    data.tokens.forEach(t => {
+                        const cat = categorize(t.metadata.marketCap);
+                        if (cat === 'low') low.push(t);
+                        else if (cat === 'mid') mid.push(t);
+                        else if (cat === 'high') high.push(t);
+                    });
+
+                    document.getElementById('lowCapCount').textContent = low.length;
+                    document.getElementById('midCapCount').textContent = mid.length;
+                    document.getElementById('highCapCount').textContent = high.length;
+
+                    renderPanel('lowCapList', low);
+                    renderPanel('midCapList', mid);
+                    renderPanel('highCapList', high);
+
+                    // Update hero stats
+                    const heroTrackedEl = document.getElementById('heroTrackedTokens');
+                    if (heroTrackedEl) {
+                        heroTrackedEl.textContent = data.tokens.length;
+                    }
+                } catch {
+                    ['lowCapList', 'midCapList', 'highCapList'].forEach(id => {
+                        document.getElementById(id).innerHTML = '<div class="empty">Failed to load data</div>';
+                    });
+                }
+            }
+
+            async function loadActivityLogs() {
+                try {
+                    const res = await fetch('/api/activity');
+                    const data = await res.json();
+
+                    if (data.success && data.logs) {
+                        const terminalBody = document.getElementById('terminalBody');
+                        if (data.logs.length === 0) {
+                            terminalBody.innerHTML = '<div class="terminal-line"><span class="timestamp">[Waiting]</span> No activity yet. Bot is monitoring for new tokens...</div>';
+                        } else {
+                            terminalBody.innerHTML = data.logs.map(log => {
+                                const time = new Date(log.timestamp).toLocaleTimeString();
+                                const action = log.action;
+                                const details = log.details || '';
+                                return `<div class="terminal-line"><span class="timestamp">[${time}]</span> <span class="action">${action}</span> ${details}</div>`;
+                            }).join('');
+                        }
+                    }
+                } catch (err) {
+                    console.error('Failed to load activity logs:', err);
+                }
+            }
+
+            loadData();
+            setInterval(loadData, 30000);
+
+            loadActivityLogs();
+            setInterval(loadActivityLogs, 10000); // Update logs every 10 seconds
+        </script>
+</body>
+
+</html>

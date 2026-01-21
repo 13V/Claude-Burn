@@ -26,9 +26,29 @@ class AIAnalyzer {
         try {
             let priceData = await dexScreener.getTokenData(tokenAddress);
 
+            // If DexScreener has no data, try Pump.fun API for bonding curve tokens
             if (!priceData) {
-                // For devnet testing, provide simulated data if DexScreener has no info
-                if (config.solanaNetwork === 'devnet') {
+                logger.info(`No pairs found for token ${tokenAddress}`);
+                logger.info(`Trying Pump.fun API for bonding curve data...`);
+
+                const { pumpPortal } = require('./pump-portal');
+                const pumpData = await pumpPortal.getTokenData(tokenAddress);
+
+                if (pumpData && pumpData.marketCap > 0) {
+                    logger.info(`Found bonding curve data: MC = $${pumpData.marketCap}`);
+                    // Convert Pump.fun data to price data format
+                    priceData = {
+                        currentPrice: 0.0001, // Approximate, bonding curve pricing
+                        priceChange1h: 0,
+                        priceChange6h: 0,
+                        priceChange24h: 0,
+                        volume24h: pumpData.marketCap * 0.1, // Estimate volume as 10% of MC
+                        liquidity: pumpData.marketCap * 0.5, // Bonding curve acts as liquidity
+                        marketCap: pumpData.marketCap,
+                        chartUrl: `https://pump.fun/${tokenAddress}`
+                    };
+                } else if (config.solanaNetwork === 'devnet') {
+                    // For devnet testing, provide simulated data
                     logger.info(`Devnet mode: Using simulated price data for ${tokenAddress}`);
                     priceData = {
                         currentPrice: 0.0001,

@@ -1,5 +1,6 @@
 import { existsSync, mkdirSync, appendFileSync } from 'fs';
 import { join } from 'path';
+import { activityLogger } from './activity-logger';
 
 const LOG_DIR = './logs';
 
@@ -21,6 +22,12 @@ class Logger {
         // Write to file
         const logFile = join(LOG_DIR, `${new Date().toISOString().split('T')[0]}.log`);
         appendFileSync(logFile, logMessage + '\n');
+
+        // Add to activity logger for dashboard
+        const levelMap: any = { 'INFO': 'info', 'SUCCESS': 'success', 'WARN': 'warn', 'ERROR': 'error' };
+        if (levelMap[level]) {
+            activityLogger.addLog(levelMap[level], message, data ? JSON.stringify(data) : undefined);
+        }
     }
 
     info(message: string, data?: any) {

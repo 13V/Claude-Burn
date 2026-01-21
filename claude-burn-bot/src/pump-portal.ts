@@ -32,6 +32,10 @@ class PumpPortal {
 
             return 0;
         } catch (error: any) {
+            // Silently return 0 for tokens without claimable fees (404 is expected for bonding curve tokens)
+            if (error.response?.status === 404) {
+                return 0;
+            }
             logger.warn(`Failed to check fees for ${tokenAddress}`, {
                 error: error.message,
             });
@@ -87,6 +91,36 @@ class PumpPortal {
                 error: error.message,
             });
             return { success: false };
+        }
+    }
+
+    /**
+     * Get token data from PumpFun API
+     */
+    async getTokenData(tokenAddress: string): Promise<{
+        image: string;
+        name: string;
+        marketCap: number;
+    } | null> {
+        try {
+            const response = await axios.get(
+                `https://frontend-api-v3.pump.fun/coins/${tokenAddress}`
+            );
+
+            if (response.data) {
+                return {
+                    image: response.data.image_uri || '',
+                    name: response.data.name || 'Unknown',
+                    marketCap: response.data.usd_market_cap || 0
+                };
+            }
+
+            return null;
+        } catch (error: any) {
+            logger.warn(`Failed to fetch token data for ${tokenAddress}`, {
+                error: error.message,
+            });
+            return null;
         }
     }
 
